@@ -14,7 +14,7 @@ describe API::License, api: true  do
       expect(response.status).to eq 200
       expect(json_response['user_limit']).to eq 0
       expect(Date.parse(json_response['starts_at'])).to eq Date.today - 1.month
-      expect(Date.parse(json_response['expires_at'])).to eq Date.today + 11.months
+      expect(Date.parse(json_response['expires_at'])).to eq Date.today + 111.months
       expect(json_response['active_users']).to eq 1
       expect(json_response['licensee']).not_to be_empty
       expect(json_response['add_ons']).to eq(license.add_ons)
@@ -33,7 +33,7 @@ describe API::License, api: true  do
       expect(response.status).to eq 201
       expect(json_response['user_limit']).to eq 0
       expect(Date.parse(json_response['starts_at'])).to eq Date.today - 1.month
-      expect(Date.parse(json_response['expires_at'])).to eq Date.today + 11.months
+      expect(Date.parse(json_response['expires_at'])).to eq Date.today + 111.months
       expect(json_response['active_users']).to eq 1
       expect(json_response['licensee']).not_to be_empty
     end

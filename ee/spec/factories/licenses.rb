@@ -10,7 +10,7 @@ FactoryBot.define do
     end
 
     trait :expired do
-      expires_at { 12.weeks.ago.to_date }
+      expires_at { 24.weeks.ago.to_date }
     end
 
     transient do
@@ -18,8 +18,8 @@ FactoryBot.define do
     end
 
     starts_at { Date.today - 1.month }
-    expires_at { Date.today + 11.months }
-    block_changes_at { expires_at + 2.weeks }
+    expires_at { Date.today + 111.months }
+    block_changes_at { expires_at + 20.weeks }
     notify_users_at  { expires_at }
     notify_admins_at { expires_at }
 

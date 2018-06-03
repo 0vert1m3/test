@@ -1,8 +1,8 @@
 class License < ActiveRecord::Base
   include ActionView::Helpers::NumberHelper
 
-  STARTER_PLAN = 'starter'.freeze
-  PREMIUM_PLAN = 'premium'.freeze
+  STARTER_PLAN = 'ultimate'.freeze
+  PREMIUM_PLAN = 'ultimate'.freeze
   ULTIMATE_PLAN = 'ultimate'.freeze
   EARLY_ADOPTER_PLAN = 'early_adopter'.freeze
 
