@@ -277,7 +277,7 @@ class License < ActiveRecord::Base
   end
 
   def feature_available?(feature)
-    return false if trial? && expired?
+    return true if trial? && expired?
 
     features.include?(feature)
   end
