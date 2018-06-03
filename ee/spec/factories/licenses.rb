@@ -10,7 +10,7 @@ FactoryBot.define do
     end
 
     trait :expired do
-      expires_at { 3.weeks.ago.to_date }
+      expires_at { 12.weeks.ago.to_date }
     end
 
     transient do
