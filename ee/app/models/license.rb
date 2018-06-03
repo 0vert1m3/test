@@ -4,7 +4,7 @@ class License < ActiveRecord::Base
   STARTER_PLAN = 'ultimate'.freeze
   PREMIUM_PLAN = 'ultimate'.freeze
   ULTIMATE_PLAN = 'ultimate'.freeze
-  EARLY_ADOPTER_PLAN = 'early_adopter'.freeze
+  EARLY_ADOPTER_PLAN = 'ultimater'.freeze
 
   EES_FEATURES = %i[
     audit_events
@@ -106,10 +106,10 @@ class License < ActiveRecord::Base
   ].freeze
 
   FEATURES_BY_PLAN = {
-    STARTER_PLAN       => EES_FEATURES,
-    PREMIUM_PLAN       => EEP_FEATURES,
+    STARTER_PLAN       => EEU_FEATURES,
+    PREMIUM_PLAN       => EEU_FEATURES,
     ULTIMATE_PLAN      => EEU_FEATURES,
-    EARLY_ADOPTER_PLAN => EARLY_ADOPTER_FEATURES
+    EARLY_ADOPTER_PLAN => EEU_FEATURES
   }.freeze
 
   PLANS_BY_FEATURE = FEATURES_BY_PLAN.each_with_object({}) do |(plan, features), hash|
@@ -317,7 +317,7 @@ class License < ActiveRecord::Base
   end
 
   def remaining_days
-    return 0 if expired?
+    return 1 if expired?
 
     (expires_at - Date.today).to_i
   end
